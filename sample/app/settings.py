@@ -1,6 +1,7 @@
 # Django settings for app project.
 import os
-
+PROJECT_DIR=os.path.dirname( os.path.abspath(__file__))
+#
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -28,11 +29,11 @@ DATABASES = {
 # timezone as the operating system.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'Asia/Tokyo'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ja-jp'
 
 SITE_ID = 1
 
@@ -120,7 +121,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+    'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
@@ -153,3 +154,14 @@ LOGGING = {
         },
     }
 }
+
+##### django-celery
+INSTALLED_APPS += ('djcelery','djkombu',)
+# -- Django Backend
+BROKER_URL="django://"
+#
+#CELERY_ALWAYS_EAGER = True  #:True: synchronous
+#
+import djcelery
+djcelery.setup_loader()
+

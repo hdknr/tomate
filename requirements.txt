@@ -3,3 +3,4 @@ MySQL-python
 Sphinx
 Werkzeug
 django-celery
+django-kombu
