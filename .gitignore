@@ -2,6 +2,7 @@
 *.pyo
 *.swp
 *.egg-info
+*.sqlite3
 docs/build/
 build
 dist
