@@ -1,11 +1,16 @@
 #!/bin/bash
 
-TOMATO_START()
+TOMATE_START()
 {
     tomato.py  /Users/hide/ve/docs/src/tomate/sample/app start &
 }
 
-TOMATO_STOP()
+TOMATE_STOP()
 {
     tomato.py  /Users/hide/ve/docs/src/tomate/sample/app stop
+}
+
+WEB_START()
+{
+    python ../manage.py runserver 0.0.0.0:8800
 }
